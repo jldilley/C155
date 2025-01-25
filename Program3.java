@@ -1,0 +1,31 @@
+/*Name: Joshua Dilley
+Date: 01/24/2025
+Program #:3
+Source Code: Program3.java
+Class: Online section 35101
+Action: This is a program given to us by Professor Holloway that calculates the area of a circle. Pi is taken to 5 decimal places.
+
+ */
+package testlab;
+
+import java.util.Scanner;
+
+public class Program3 
+{
+    public static void main(String[] args) 
+    {
+        final float PI = 3.14159f;
+        
+        float Radius;
+        
+        Scanner Input = new Scanner(System.in);
+        
+        System.out.print("Enter the radius of the circle ==> ");
+        
+        Radius = Input.nextFloat();
+        
+        System.out.println("The area of the circle with radius " + Radius + " is " + PI*Radius*Radius + "\n");
+        
+        
+    }
+}
