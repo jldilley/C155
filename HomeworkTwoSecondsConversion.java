@@ -1,0 +1,44 @@
+/*Name: Joshua Dilley
+Date: 01/31/2025
+Assignment: Homework Two Problem Three
+Source Code: HomeworkTwoSecondsConversion.java
+Class: Online Section 35101
+Action: Claculate and display the number of days, hours, minutes, and seconds given a number of minutes.
+*/
+package testlab;
+
+import java.util.Scanner;
+
+public class HomeworkTwoSecondsConversion 
+{
+    public static void main(String[] args) 
+    {//set up
+        Scanner Input = new Scanner(System.in); //call up scanner utility to prompt user for input
+        int Days, Hours, Minutes, Seconds;// declaring my variables
+        
+     //Data collection
+        System.out.print("Please enter number of seconds remaining-> ");
+        Seconds = Input.nextInt();
+        
+     //Calculations
+        Days = (Seconds/86400);
+        Seconds = (Seconds%86400);
+        Hours = (Seconds/3600);
+        Seconds = (Seconds%3600);
+        Minutes = (Seconds/60);
+        Seconds = (Seconds%60);
+        
+     //Results
+        System.out.println(Days + " Days " + Hours + " Hours " + Minutes + " Minutes " + Seconds + " Seconds " );
+    }
+}
+/* ****************Program Output*************
+Please enter number of seconds remaining-> 86400
+1 Days 0 Hours 0 Minutes 0 Seconds 
+
+Please enter number of seconds remaining-> 3600
+0 Days 1 Hours 0 Minutes 0 Seconds 
+
+Please enter number of seconds remaining-> 60
+0 Days 0 Hours 1 Minutes 0 Seconds 
+*/
