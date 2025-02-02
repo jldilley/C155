@@ -35,11 +35,9 @@ public class Program5
     
 }
 /* **************************Program Output****************************
-Please enter the number of nickels--> 20
-Please enter the number of pennies--> 1
-You have 1 dollar(s), and 1 cent(s)
-
-Please enter the number of nickels--> 58
-Please enter the number of pennies--> 125
-You have 4 dollar(s), and 15 cent(s)
+Please enter the number of quarters--> 80
+Please enter the number if dimes--> 94
+Please enter the number of nickels--> 2
+Please enter the number of pennies--> 67
+You have 30 dollar(s), and 17 cent(s)
 */
