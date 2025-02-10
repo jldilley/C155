@@ -3,7 +3,7 @@ Date: 02/09/2025
 Assignment: Homework 3 Problem 1
 Source Code: Homework3Problem1.java
 Class: Online Section 35101
-Action: User enters two entegers. Both integers are displayed, but the largest
+Action: User enters two integers. Both integers are displayed, but the largest
 one is displayed first. 
 
  */
