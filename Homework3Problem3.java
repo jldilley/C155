@@ -1,0 +1,72 @@
+/*Name: Joshua Dilley   
+Date: 02/09/2025    
+Assignment: Homework 3 Problem 3
+Source Code: Homework3Problem3.java
+Class: Online Sectiion 35101
+Action: This program will accept any two integers between the numbers -180 and
+180. The product, as well as the quotient and any remainder, of the two numbers
+will be displayed. 
+
+Notes: The program crashes if the second integer entered is zero since 
+division by zero is an undefined operation.
+
+*/
+package testlab;
+
+import java.util.Scanner;
+
+public class Homework3Problem3 
+{
+    public static void main(String[] args) 
+    {
+        Scanner Input = new Scanner(System.in);
+        int X = 0, Y = 0;
+        
+        System.out.print("Please enter any two integers between -180 and 180--> ");
+        X = Input.nextInt();
+        Y = Input.nextInt();
+        
+        System.out.println("");
+        
+        if ((X > -181 && X < 181) && (Y > -181 && Y < 181))
+        {    
+            System.out.println(" " +X+ "        " + X/Y + " R " + X%Y);
+            System.out.println("x " + Y + "        _______");
+            System.out.println("----" + "     "+ Y+"|"+X);
+            System.out.println(X*Y);
+        }    
+        else
+            System.out.println("Input out of range. Please try again. ");
+    }
+}
+/* **********************Program Output**************************************
+Please enter any two integers between -180 and 180--> 125 34
+
+ 125        3 R 23
+x 34        _______
+----     34|125
+4250
+
+Please enter any two integers between -180 and 180--> 157 16
+
+ 157        9 R 13
+x 16        _______
+----     16|157
+2512
+
+Please enter any two integers between -180 and 180--> -181 8
+
+Input out of range. Please try again. 
+
+Please enter any two integers between -180 and 180--> 181 3
+
+Input out of range. Please try again.
+
+Please enter any two integers between -180 and 180--> 3 -181
+
+Input out of range. Please try again. 
+
+Please enter any two integers between -180 and 180--> 1 181
+
+Input out of range. Please try again. 
+*/
