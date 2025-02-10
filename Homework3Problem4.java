@@ -1,0 +1,85 @@
+/*Name: Joshua Dilley   
+Date: 02/09/2025
+Assignment: Homework 3 Problem 4
+Source Code: Homework3Problem4.java
+Class: Online Section 35101
+Action: Write a program to calculate the state income tax owed on a person's
+net income. 
+Note: I think you mean gross income, as net income is calculated when 
+you subtract taxes. 
+
+ */
+
+/* *************************Three Step Analysis******************************
+1)Build a program that calculates the amount of state taxes owed on someone's 
+income.
+
+2) Input                  Output                             Equations
+   Income                 Income                        (Income-15000)*0.05
+                          State Tax                ((Income-30,000)*0.10)+750
+                     snarky political remark                   if else if
+
+
+input data type double
+
+3)Limits and constraints: output to two decimal places to denote cents
+
+/* ***************************Algorithm***********************************
+
+write "Please enter the person's income"
+read income
+if (Income> 14999 and Income < 30001)
+{
+    write "Income"
+    Write ("State Tax", (Income-15000)*0.05)
+}
+else if(Income>=30,001)
+{   
+    write "Income"
+    write ("State Tax", ((Income-30000)*0.10)+750)   
+}
+else
+    write "snarky remark"
+*/
+package testlab;
+
+import java.util.Scanner;
+
+public class Homework3Problem4 
+{
+    public static void main(String[] args) 
+    {   
+        Scanner Input = new Scanner(System.in);
+        double Income = 0, StateTax;
+        final double FIRST_BRACKET_MAX = 750;
+        
+        
+        System.out.print("Please enter the person's income--> ");
+        Income = Input.nextDouble();
+        
+        if(Income > 14999 && Income < 30001)
+        {   
+            System.out.print("Income = $");System.out.printf("%.2f %n",+ Income);
+            System.out.print("State Tax = $");System.out.printf("%.2f %n", ((Income-15000)*0.05));
+        }
+        else if(Income >= 30001)
+        {
+            System.out.print("Income = $");System.out.printf("%.2f %n", Income);
+            System.out.print("State Tax = $");System.out.printf("%.2f %n", (((Income-30000)*0.10)+FIRST_BRACKET_MAX));
+        }    
+        else
+            System.out.println("No taxes are owed. You make Democrats very sad.");
+    }
+}
+/* *****************************Program Output********************************
+Please enter the person's income--> 40000
+Income = $40000.00 
+State Tax = $1750.00 
+
+Please enter the person's income--> 12500
+No taxes are owed. You make Democrats very sad.
+
+Please enter the person's income--> 28275
+Income = $28275.00 
+State Tax = $663.75 
+*/
