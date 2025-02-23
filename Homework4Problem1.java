@@ -1,0 +1,164 @@
+/* Name: Joshua Dilley   
+Date: 02/15/2025    
+Assignment: Homework 4 Problem 1
+Source Code: Homework4Problem1.java
+Class: Online Section 35101
+Action: I've been asked to write a program to determine GPA based on two 
+courses and a 4.0 scale.
+Note: This assignment kicked my ass.
+
+ */
+
+/* ********************Three Step Analysis***********************************
+1)Write a program the calculates GPA on two classes using a 4.0 scale. No
+No plus or minus grades. We'll assume the user enters a capital letter, so 
+so no need to test for upper case. Needs to display letter grade and the 
+number of credits for each class. Value of the GPA is displayed along with a 
+message if you have a low or high GPA. 
+
+2)Inputs                           Outputs                        Equations
+LetterGrade1st                  Letter grade                       if else
+LetterGrade2nd                  Credit Hours        TotalCreditHours = (CreditHours1st + CreditHours2nd)
+TotalPoints                     GPA                GPA = (CreditHours1st*LetterGrade1st)+
+TotalCreditHours                                   (CreditHours2nd*LetterGrade2nd))/TotalCreditHours)
+CreditHours1st
+CreditHours2nd
+
+3)No limits.
+/* *******************************Algorithm*********************************
+
+float LetterGradeFirstClass, LetterGradeSecondClass, GPA
+int CreditHoursFirstClass, CreditHoursSecondClass, TotalPointsFirstClass, TotalPointsSecondClass
+
+write "Please enter the letter grade for the first class"
+read LetterGrade1st
+write "Please enter the credit hours for the first class"
+read CreditHours1st
+
+write "Please enter the letter grade for the second class"
+read LetterGrade2nd
+write "Please enter the credit hours for the second class"
+read CreditHours2nd
+
+write "LetterGrade1st + CreditHours1st"
+write "LetterGrade2nd + CreditHours2nd"
+
+if(LetterGrade1st == 65)then
+            LetterGrade1st = 4;
+        else if(LetterGrade1st == 66)
+            LetterGrade1st = 3;
+        else if(LetterGrade1st == 67)
+            LetterGrade1st = 2;
+        else if(LetterGrade1st == 68)
+            LetterGrade1st = 1;
+        else
+            LetterGrade1st = 0;
+        
+        if(LetterGrade2nd == 65)then
+            LetterGrade2nd = 4;
+        else if(LetterGrade2nd == 66)
+            LetterGrade2nd = 3;
+        else if(LetterGrade2nd == 67)
+            LetterGrade2nd = 2;
+        else if(LetterGrade2nd == 68)
+            LetterGrade2nd = 1;
+        else
+            LetterGrade2nd = 0;
+    
+TotalCreditHours = (CreditHours1st + CreditHours2nd)
+GPA = (TotalPointsFirstClass+TotalPointsSecondClass)/(CreditHoursFirstClass+CreditHoursSecondClass)
+
+
+write "Your GPA = ", GPA
+if(GPA<2.0)
+   write "You're doing poorly."
+else(GPA>=3.5)
+    write "Congratualations, doing good."
+
+*/
+
+package testlab;
+
+import java.util.*;
+
+public class Homework4Problem1 
+{
+    public static void main(String[] args) 
+    {   
+        Scanner Input = new Scanner(System.in);
+        char LetterGrade1st, LetterGrade2nd; 
+        int  TotalPoints, TotalCreditHours = 0, CreditHours1st, CreditHours2nd;
+        float  GPA; 
+                
+        System.out.print("Enter letter grade for first class--> ");
+        LetterGrade1st = Input.next().charAt(0);
+        System.out.print("Enter number of credit hours for first class--> ");
+        CreditHours1st = Input.nextInt();
+        
+        System.out.print("\nEnter letter grade for second class--> ");
+        LetterGrade2nd = Input.next().charAt(0);
+        System.out.print("Enter number of credit hours for second class--> ");
+        CreditHours2nd = Input.nextInt();
+        
+        System.out.print("\n" + LetterGrade1st);System.out.print("   " + CreditHours1st + "\n");
+        System.out.print(LetterGrade2nd);System.out.print("   " + CreditHours2nd + "\n");
+        
+        if(LetterGrade1st == 65)
+            LetterGrade1st = 4;
+        else if(LetterGrade1st == 66)
+            LetterGrade1st = 3;
+        else if(LetterGrade1st == 67)
+            LetterGrade1st = 2;
+        else if(LetterGrade1st == 68)
+            LetterGrade1st = 1;
+        else
+            LetterGrade1st = 0;
+        
+        if(LetterGrade2nd == 65)
+            LetterGrade2nd = 4;
+        else if(LetterGrade2nd == 66)
+            LetterGrade2nd = 3;
+        else if(LetterGrade2nd == 67)
+            LetterGrade2nd = 2;
+        else if(LetterGrade2nd == 68)
+            LetterGrade2nd = 1;
+        else
+            LetterGrade2nd = 0;
+    
+       TotalCreditHours = (CreditHours1st + CreditHours2nd);
+       GPA = ((float)((CreditHours1st*LetterGrade1st)+(CreditHours2nd*LetterGrade2nd))/TotalCreditHours);
+       System.out.print("Your GPA = ");System.out.printf("%.5f %n", + GPA);
+       
+       if(GPA < 2.0)
+            System.out.println("You are doing poorly.");
+       else if(GPA >= 3.5)
+            System.out.println("Congratualtions, doing good.");
+    }
+}
+/* *************************Program Output***********************************
+Enter letter grade for first class--> B
+Enter number of credit hours for first class--> 3
+
+Enter letter grade for second class--> C
+Enter number of credit hours for second class--> 4
+
+B   3
+C   4
+Your GPA = 2.42857 
+
+Enter letter grade for first class--> B
+Enter number of credit hours for first class--> 3
+
+Enter letter grade for second class--> A
+Enter number of credit hours for second class--> 4
+
+B   3
+A   4
+Your GPA = 3.57143 
+Congratualtions, doing good.
+
+D   3
+C   3
+Your GPA = 1.50000 
+You are doing poorly.
+*/
