@@ -4,7 +4,7 @@ Program #: 2
 Source Code: Program2.java
 Class: Online Section 35101
 Action: This was the second program given to us by Professor Holloway. It declares and initializes three variables and assigns them to the 
-Average identifier. I learned how to declarre and initialize a set of variables that share a data type on the same line. I also learned that psvm and sout
+Average identifier. I learned how to declare and initialize a set of variables that share a data type on the same line. I also learned that psvm and sout
 are short cuts for the main and print line commands, respectively. 
 
  */
