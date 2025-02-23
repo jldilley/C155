@@ -3,7 +3,7 @@ Date: 01/31/2025
 Assignment: Homework Number Two Problem 1
 Source Code: HomeworkTwoTriangles.java
 Class: Online Section 35101
-Action: Enter two angles of a triangle. Calculate and display the value of the thrid angle. 
+Action: Enter two angles of a triangle. Calculate and display the value of the third angle. 
 Notes: I was helped to complete this assignment by Patrick Ryan during tutoring hours. 
 */
 package testlab;
