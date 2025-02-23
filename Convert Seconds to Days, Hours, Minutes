@@ -3,7 +3,7 @@ Date: 01/31/2025
 Assignment: Homework Two Problem Three
 Source Code: HomeworkTwoSecondsConversion.java
 Class: Online Section 35101
-Action: Claculate and display the number of days, hours, minutes, and seconds given a number of minutes.
+Action: Claculate and display the number of days, hours, minutes, and seconds given a number of seconds.
 */
 package testlab;
 
