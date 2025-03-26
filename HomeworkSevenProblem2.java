@@ -1,0 +1,114 @@
+/*Name: Joshua Dilley
+Date: 03/25/2025
+Assignment: Homework 7 Problem 2
+Source Code: HomeworkSevenProblem2.java
+Class: Online Section 35101
+Action: User enters an integer between 1 and 100. The program calls two
+functions in order calculate odd or even status and to calculate the factorial 
+summation. The values are returned to the main and then displayed in the 
+output. 
+Build Time: 2 hours 45 minutes.
+Notes: Entering a character will cause the program to stop... by crashing. 
+I wonder if there is a way to stop the program upon input of a character
+without crashing. Also, it'd be useful if I could store these functions 
+somewhere for use in other programs. 
+ */
+package testlab;
+
+import java.util.*;
+
+public class HomeworkSevenProblem2 
+{
+    public static void main(String[] args) 
+    {
+        Scanner Input = new Scanner(System.in);
+        int Number = 1;
+        
+        while (Number >= 1 && Number <= 100)
+        {
+            System.out.print("\nPlease enter an integer between 1 and 100. \n"); 
+            System.out.print("Any other integer to quit program-->");
+            Number = Input.nextInt();
+            
+                switch(OddOrEven(Number))
+                {
+                    case 1:System.out.print("\nYour number is even.\n");break;
+                    case 2:System.out.print("\nYour number is odd.\n");break;
+                }
+            System.out.print("The summation of the factorial of " + Number + 
+                    " is " + FactorialSum(Number) + "\n");
+        }
+    }
+    
+    /* ***************************OddOrEven(Number)***************************
+    Action: Determines the odd or even status of the integer that was entered 
+            in the main.
+    Parameters: int X; holds the variable Number from the main.
+    Return: Returns 1 for even or 2 for odd to the switch in the main.
+    */
+    
+    static int OddOrEven(int X)
+    {
+        if (X % 2 == 0)
+           return 1;
+        else
+           return 2;
+    }
+    
+    /* ***************************FactorialSum(Number)**********************
+    Action: Calculates the factorial summation of the integer entered in the 
+            main.
+    Parameters: int Num; holds the variable Number from the main.
+    Return: Returns Sum to the main after calculating the summation.
+    */
+    
+    static int FactorialSum(int Num)
+    {
+        int Sum = 0;
+        
+        for(int i = Num; i > 0; --i)
+            
+            Sum = Sum + i;
+        
+        return Sum;
+    }
+}
+/* **************************Program Output***********************************
+Please enter an integer between 1 and 100. 
+Any other integer to quit program-->1
+
+Your number is odd.
+The summation of the factorial of 1 is 1
+
+Please enter an integer between 1 and 100. 
+Any other integer to quit program-->2
+
+Your number is even.
+The summation of the factorial of 2 is 3
+
+Please enter an integer between 1 and 100. 
+Any other integer to quit program-->3
+
+Your number is odd.
+The summation of the factorial of 3 is 6
+
+Please enter an integer between 1 and 100. 
+Any other integer to quit program-->4
+
+Your number is even.
+The summation of the factorial of 4 is 10
+
+
+Please enter an integer between 1 and 100. 
+Any other integer to quit program-->100
+
+Your number is even.
+The summation of the factorial of 100 is 5050
+
+Please enter an integer between 1 and 100. 
+Any other integer to quit program-->101
+
+Your number is odd.
+The summation of the factorial of 101 is 5151
+BUILD SUCCESSFUL (total time: 5 seconds)
+*/
