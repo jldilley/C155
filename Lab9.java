@@ -5,7 +5,7 @@ Source Code: Lab9.java
 Class: Online Section 35101
 Action: User enters three integers. Program determines the largest one and
 displays.
-Biuld time: 45 minutes
+Build time: 45 minutes
 */
 package testlab;
 
