@@ -1,0 +1,65 @@
+/*Name: Joshua Dilley
+Date: 04/13/2025
+Assignment: Homework 10 Problem 1
+Source Code: Homework10Problem1.java
+Class: Online Section 35101
+Action: Build a coin flipping simulator and keep track of the results of a 
+thousand flips.
+Note: If there was a way to add a "green" slot to the code, I think I could simulate 
+a roulette wheel, minus the numbers. 
+
+ */
+package testlab;
+import java.util.*;
+public class Homework10Problem1 
+{
+    public static void main(String[] args) 
+    {
+        Scanner Input = new Scanner(System.in);
+        float Heads = 0, Tails = 0;
+       
+        for(int i = 0; i < 1000; ++i) 
+        {    
+            switch(Flip())
+            {
+                case 0: ++Tails;break;
+                case 1: ++Heads;break;
+            }
+        }
+        
+        System.out.print("Heads = " + (int)Heads + "  ");
+        System.out.printf("%3.1f", (Heads/10));System.out.print("%\n");
+        System.out.print("Tails = " + (int)Tails + "  ");
+        System.out.printf("%3.1f", (Tails/10));System.out.print("%\n"); 
+        
+    }
+/* ************************Flip*******************************************
+    Action: uses the Math.random method in order to simulate a coin flip
+    Parameters: none, this function does not accept any arguments from the main
+    Returns: 0, for Tails. 1, for heads.
+    Preconditions: no preconditions since everything is hardcoded in
+----------------------------------------------------------------------------*/
+    static int Flip()
+    {
+        int Flip = 0;                           
+                 
+        Flip = (int)(2 * Math.random());
+        
+        if(Flip < 1)
+            return 0;
+        else
+            return 1;
+    }        
+    
+}
+/* *******************************Program Output*******************************
+Heads = 481  48.1%
+Tails = 519  51.9%
+
+Heads = 511  51.1%
+Tails = 489  48.9%
+
+Heads = 497  49.7%
+Tails = 503  50.3%
+
+*/
