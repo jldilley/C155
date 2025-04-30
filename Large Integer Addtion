@@ -80,7 +80,7 @@ public class Homework12
     Action: adds two intger arrays together
     Parameters: int [] X holds First from the main, int[] Y holds Second 
     from the main
-    Return: integer array composed of the sum of X and Y
+    Return: Sum, integer array composed of the sum of X and Y
     Preconditions: none
 ----------------------------------------------------------------------------*/
     static int[] ArraySum(int [] X, int [] Y)
