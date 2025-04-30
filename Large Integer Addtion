@@ -110,7 +110,7 @@ public class Homework12
     }
 /* ************************DisplayArray************************************
     Action: this function is used to display the arrays
-    Parameters: int[] X, holds the array to be diplayed
+    Parameters: int[] X, holds the array to be displayed
     Returns: nothing is returned
     Preconditions: none    
 -----------------------------------------------------------------------------*/
