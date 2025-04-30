@@ -1,0 +1,203 @@
+/*Name: Joshua Dilley
+Date: 04/29/2025
+Assignment: Homework 12
+Source Code: Homework12.java
+Class: Online Section 35101
+Action: User enters two Strings of integers. The program converts the Strings
+into arrays of integers and then adds them together. Finally, the original 
+arrays and the sum of the arrays are displayed.
+Notes: I used my algorithm, as well as Professor Holloway's algorithm that 
+he went over in class. I also used the carrybit he taught us to use. I had 
+to look up how to zero out my arrays. I can't remember when we went over that 
+in class. This was the most challenging bit of programming I did this semester.
+Very difficult for me. 
+
+ */
+package testlab;
+import java.util.*;
+public class Homework12 
+{
+    final static int SIZE = 20;
+    static Scanner Input = new Scanner(System.in);
+    
+    public static void main(String[] args) 
+    {
+        char Ch = '0';
+        int [] First = new int [SIZE]; 
+        int [] Second = new int [SIZE];
+        int [] Sum = new int [SIZE];
+        
+        do
+        {    
+            System.out.print("\nPlease enter an integer up to twenty digits: ");
+            EnterInteger(First);
+            
+            System.out.print("\nPlease enter another integer up to twenty digits: ");
+            EnterInteger(Second);
+            
+            System.out.println(" ");
+            Sum = ArraySum(First, Second);
+        
+            System.out.println("If you add the arrays together, you get: \n");
+            DisplayArray(First);
+            System.out.println(" ");
+            DisplayArray(Second);
+            System.out.println(" ");
+            System.out.println("----------------------------------------");
+            DisplayArray(Sum);
+        
+            System.out.print("\n\nWould you like to continue? Y or N: ");
+            Ch = Input.next().charAt(0);
+            Input.nextLine();
+            
+            Arrays.fill(First, 0); //I had to look this up
+            Arrays.fill(Second, 0);     
+        }
+        while(Character.toUpperCase(Ch) == 'Y');
+    }
+/* *********************EnterInteger******************************************
+    Action: accepts a String and converts the String of characters to a 
+    String of integers. The integers are then entered into an array. 
+    Parameters: int [] X, accepts the integers converted from the String
+    Return: nothing is returned
+    Preconditions: user has to enter a string of integers
+-----------------------------------------------------------------------------*/            
+    static void EnterInteger(int [] X)
+    {
+        String Str;
+        int N =0;
+        
+        Str = Input.nextLine();
+        
+        for(int i = 0; i < Str.length(); ++i)
+        {
+            N = Str.charAt(i) - '0';
+            X[i + SIZE -(Str.length())] = N;
+        }    
+    }
+
+/* ***********************ArraySum********************************************
+    Action: adds two intger arrays together
+    Parameters: int [] X holds First from the main, int[] Y holds Second 
+    from the main
+    Return: integer array composed of the sum of X and Y
+    Preconditions: none
+----------------------------------------------------------------------------*/
+    static int[] ArraySum(int [] X, int [] Y)
+    {
+       int[] Sum = new int [SIZE];
+       int j = 19, i = 19, S = 0, CarryBit = 0;
+       
+       while(i >= 0)
+       {
+            S = X[j] + Y[j] + CarryBit;
+       
+            if (S <= 9)
+            {    
+                Sum[i] = S;
+                CarryBit = 0;
+            }
+            else
+            {    
+                Sum[i] = S - 10;
+                CarryBit = 1;
+            }    
+       
+            --i;
+            --j;
+       }
+       return Sum;
+    }
+/* ************************DisplayArray************************************
+    Action: this function is used to display the arrays
+    Parameters: int[] X, holds the array to be diplayed
+    Returns: nothing is returned
+    Preconditions: none    
+-----------------------------------------------------------------------------*/
+    static void DisplayArray(int[] X)
+    {
+        for(int i =0; i < SIZE; ++i)
+            System.out.print(X[i] + " ");
+    }        
+}
+/************************Program Output***************************************
+ 
+Please enter an integer up to twenty digits: 65213
+
+Please enter another integer up to twenty digits: 2125463
+ 
+If you add the arrays together, you get: 
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 5 2 1 3  
+0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 2 5 4 6 3  
+----------------------------------------
+0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 9 0 6 7 6 
+
+Would you like to continue? Y or N: y
+
+Please enter an integer up to twenty digits: 5412365412145
+
+Please enter another integer up to twenty digits: 6521354415478
+ 
+If you add the arrays together, you get: 
+
+0 0 0 0 0 0 0 5 4 1 2 3 6 5 4 1 2 1 4 5  
+0 0 0 0 0 0 0 6 5 2 1 3 5 4 4 1 5 4 7 8  
+----------------------------------------
+0 0 0 0 0 0 1 1 9 3 3 7 1 9 8 2 7 6 2 3 
+
+Would you like to continue? Y or N: y
+
+Please enter an integer up to twenty digits: 1
+
+Please enter another integer up to twenty digits: 1
+ 
+If you add the arrays together, you get: 
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1  
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1  
+----------------------------------------
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 
+
+Would you like to continue? Y or N: y
+
+Please enter an integer up to twenty digits: 9
+
+Please enter another integer up to twenty digits: 9
+ 
+If you add the arrays together, you get: 
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9  
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9  
+----------------------------------------
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 8 
+
+Would you like to continue? Y or N: y
+
+Please enter an integer up to twenty digits: 2
+
+Please enter another integer up to twenty digits: 2
+ 
+If you add the arrays together, you get: 
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2  
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2  
+----------------------------------------
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 
+
+Would you like to continue? Y or N: n
+
+Please enter an integer up to twenty digits: 785463210254
+
+Please enter another integer up to twenty digits: 965412478544
+ 
+If you add the arrays together, you get: 
+
+0 0 0 0 0 0 0 0 7 8 5 4 6 3 2 1 0 2 5 4  
+0 0 0 0 0 0 0 0 9 6 5 4 1 2 4 7 8 5 4 4  
+----------------------------------------
+0 0 0 0 0 0 0 1 7 5 0 8 7 5 6 8 8 7 9 8 
+
+Would you like to continue? Y or N: n
+
+ ---------------------------------------------------------------------------*/
